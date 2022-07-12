@@ -3,7 +3,7 @@
     <h1 *ngIf="!winner && whatState=='o'">Current Player: {{ userInput.secondName }} </h1>
 
     <h1 *ngIf="winner">GAME OVER! <br> {{winner}}</h1>
-    <button (click)="startGame()" >Restart</button>
+    <button (click)="startGame()">Restart</button>
     <button (click)="goToWelcome()" *ngIf="winner" >Change Players</button>
 
 <br>

@@ -31,9 +31,22 @@ export class BoardComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe((params:any)=> {
       this.userInput=params;
     })
-    this.startGame();
+
+    this.validation();
   }
 
+  validation(){
+    if(this.userInput.players ==1 && this.userInput.firstName)
+    this.startGame();
+
+    else if(this.userInput.players ==2 && this.userInput.firstName && this.userInput.secondName)
+    this.startGame();
+
+    else{
+      alert("Ju nuk plotesuat fushat e kerkuara!\n Lutemi te plotesoni fushat dhe shtypni perseri 'Start' :) .");
+      this.route.navigate(['/welcome']);
+    }
+  }
   /**
    * Funksioni qe nis lojen
    */
