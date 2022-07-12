@@ -1,0 +1,9 @@
+    <div class="logs">
+        <p class="title"><strong>Logs</strong></p>
+        <ng-container *ngFor="let l of logs; let i=index">
+            <p style="color: green"
+             *ngIf="l && l.state=='x'" (click)="display(i)" >{{i+1}}.{{l.name}} changed square {{l.coordinate+1}} state to '{{l.state}}'.</p>
+             <p style="color: blue"
+             *ngIf="l && l.state=='o'" (click)="display(i)" >{{i+1}}.{{l.name}} changed square {{l.coordinate+1}} state to '{{l.state}}'.</p>
+        </ng-container>
+    </div>

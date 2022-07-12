@@ -1,0 +1,29 @@
+<body>
+    <h1 *ngIf="!winner && whatState=='x'">Current Player: {{ userInput.firstName }} </h1>
+    <h1 *ngIf="!winner && whatState=='o'">Current Player: {{ userInput.secondName }} </h1>
+
+    <h1 *ngIf="winner">GAME OVER! <br> {{winner}}</h1>
+    <button (click)="startGame()" >Restart</button>
+    <button (click)="goToWelcome()" *ngIf="winner" >Change Players</button>
+
+<br>
+<div class="square">
+    
+   <app-square
+    *ngFor="let square of squares ; let i=index"
+    [value]="square"
+    [disableSquare]="disableBoard"
+    (click) = "clicked(i)">
+   </app-square>
+</div>
+
+<div class="logs">
+    <app-event
+    [logs]="logs"
+    (updateBoard)="newBoard($event)"
+>
+
+</app-event>
+</div>
+
+</body>

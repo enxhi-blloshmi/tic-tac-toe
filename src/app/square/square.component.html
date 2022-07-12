@@ -1,0 +1,3 @@
+<button [disabled]="disableSquare" *ngIf="!value">{{ value }}</button>
+<button style="color: green;" [disabled]="disableSquare" *ngIf="value == 'x'">{{ value }}</button>
+<button style="color: blue;" [disabled]="disableSquare" *ngIf="value == 'o'" >{{ value }}</button>

@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Welcome to Tic-Tac-Toe game 😊</h1>
+    <br><br>
+    
+     <label>Choose the number of players:
+            <select [(ngModel)]="selectValue" name="playersNum">
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </label>
+        <br><br>
+    
+    
+        <div *ngIf="selectValue==1">
+            <label>Your Name: 
+                <input type="text" placeholder="Insert name here" [(ngModel)]="name1" name="firstPlayer" >
+            </label>
+        </div>
+    
+        <div *ngIf="selectValue==2"> 
+            <label>Player 1 Name: 
+                <input type="text" placeholder="Insert name here" [(ngModel)]="name1" name="firstPlayer" >
+            </label><br><br>
+            
+            <label>Player 2 Name: 
+                <input type="text" placeholder="Insert name here" [(ngModel)]="name2" name="secondPlayer">
+            </label><br><br>
+        </div>
+        <br>
+            <button (click)="sendValues()">Start</button>
+      
+    </body>
+</html>
