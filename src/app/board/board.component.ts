@@ -35,6 +35,9 @@ export class BoardComponent implements OnInit {
     this.validation();
   }
 
+  /**
+   * Funksioni qe kontrollon nese perdoruesi ka futur te dhena per nisjen e lojes
+   */
   validation(){
     if(this.userInput.players ==1 && this.userInput.firstName)
     this.startGame();
